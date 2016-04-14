@@ -8,5 +8,7 @@
             "email": "smonkl@bk.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=7.0.0"
+    }
 }
