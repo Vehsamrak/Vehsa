@@ -1,6 +1,7 @@
 {
     "name": "vehsamrak/vehsa",
     "description": "Simplest MVC Framework",
+    "keywords": ["simple", "mvc", "framework"],
     "license": "GPL v3",
     "authors": [
         {
@@ -10,5 +11,10 @@
     ],
     "require": {
         "php": ">=7.0.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
     }
 }
