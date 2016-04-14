@@ -1,8 +1,6 @@
 <?php
 
-namespace Router;
-
-use Vehsamrak\Vehsa\AbstractController;
+namespace Vehsamrak\Vehsa;
 
 /**
  * Main router
