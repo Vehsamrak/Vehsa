@@ -26,6 +26,6 @@ class Renderer
 
         extract($parameters);
 
-        require_once(__DIR__ . '/../View/' . $templateFileName);
+        require_once(Config::get('root_directory') . '/View/' . $templateFileName);
     }
 }
