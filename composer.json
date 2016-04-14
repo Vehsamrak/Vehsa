@@ -1,0 +1,12 @@
+{
+    "name": "vehsamrak/vehsa",
+    "description": "Simplest MVC Framework",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Petr Karmashev",
+            "email": "smonkl@bk.ru"
+        }
+    ],
+    "require": {}
+}
