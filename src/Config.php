@@ -12,14 +12,22 @@ use Vehsamrak\Vehsa\Exception\ConfigParameterNotFound;
 class Config
 {
 
+    /**
+     * Config singleton
+     * @var array
+     */
+    private static $config;
+
     public static function get($key)
     {
-        $config = require(__DIR__ . '/../../../../src/config.php');
-
-        if (!isset($config[$key])) {
-        	throw new ConfigParameterNotFound;
+        if (!self::$config) {
+            self::$config = require(__DIR__ . '/../../../../src/config.php');
         }
 
-        return $config[$key] ;
+        if (!isset(self::$config[$key])) {
+            throw new ConfigParameterNotFound;
+        }
+
+        return self::$config[$key] ;
     }
 }
