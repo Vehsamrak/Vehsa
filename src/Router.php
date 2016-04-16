@@ -2,6 +2,9 @@
 
 namespace Vehsamrak\Vehsa;
 
+use Vehsamrak\Vehsa\Exception\ActionNotFound;
+use Vehsamrak\Vehsa\Exception\ControllerNotFound;
+
 /**
  * Main router
  * @author Vehsamrak
@@ -11,11 +14,20 @@ class Router
 
     const INDEX_NAME = 'index';
 
+    /**
+     * @return mixed
+     * @throws ControllerNotFound
+     * @throws ActionNotFound
+     */
     public function run()
     {
         $routes = $this->parseRoutes();
         $controllerName = $this->getControllerName($routes);
         $action = $this->getAction($routes);
+
+        if (!class_exists($controllerName)) {
+            throw new ControllerNotFound();
+        }
 
         /** @var AbstractController $controller */
         $controller = new $controllerName;

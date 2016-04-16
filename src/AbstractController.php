@@ -2,7 +2,7 @@
 
 namespace Vehsamrak\Vehsa;
 
-use Vehsamrak\Vehsa\Exception\ActionNotExist;
+use Vehsamrak\Vehsa\Exception\ActionNotFound;
 
 /**
  * Abstract controller. Extend this class to make your controllers.
@@ -25,7 +25,7 @@ abstract class AbstractController
      * Processing controller action
      * @param string|null $actionName
      * @return mixed
-     * @throws ActionNotExist
+     * @throws ActionNotFound
      */
     public final function processAction($actionName)
     {
@@ -34,7 +34,7 @@ abstract class AbstractController
         if (method_exists(static::class, $actionName) && is_callable([static::class, $actionName])) {
             return static::$actionName();
         } else {
-            throw new ActionNotExist();
+            throw new ActionNotFound();
         }
     }
 
