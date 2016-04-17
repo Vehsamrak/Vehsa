@@ -11,6 +11,9 @@ use Vehsamrak\Vehsa\Exception\ActionNotFound;
 abstract class AbstractController
 {
 
+    const HTTP_METHOD_POST = 'POST';
+    const HTTP_METHOD_GET = 'GET';
+
     /** @var Renderer */
     private $renderer;
 
@@ -64,5 +67,31 @@ abstract class AbstractController
     public function getParameter(string $parameterName)
     {
         return $this->getPost()[$parameterName] ?? null;
+    }
+
+    /**
+     * Check request method
+     * @param string $method
+     * @return bool
+     */
+    public function isRequestMethod(string $method)
+    {
+        return $_SERVER['REQUEST_METHOD'] === $method;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPost()
+    {
+        return $this->isRequestMethod(self::HTTP_METHOD_POST);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGet()
+    {
+        return $this->isRequestMethod(self::HTTP_METHOD_GET);
     }
 }
