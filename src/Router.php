@@ -13,6 +13,8 @@ class Router
 {
 
     const INDEX_NAME = 'index';
+    const ENVIRONMENT_DEVELOPMENT = 'dev';
+    const ENVIRONMENT_PRODUCTION = 'prod';
 
     /**
      * @return mixed
