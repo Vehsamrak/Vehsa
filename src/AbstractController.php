@@ -114,4 +114,12 @@ abstract class AbstractController
 
         return $controller->processAction($action);
     }
+
+    /**
+     * @param string $url
+     */
+    public function redirect(string $url)
+    {
+        header(sprintf('Location: %s', $url));
+    }
 }
