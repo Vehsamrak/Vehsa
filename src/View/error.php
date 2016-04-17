@@ -1,3 +1,6 @@
+<?php
+/** @var \Exception $exception */
+?>
 <!doctype html>
 <html>
 <head>
@@ -5,6 +8,6 @@
     <title>Error occured!</title>
 </head>
 <body>
-<h1>Error occured!</h1>
+<h1>Error occured! <?= $exception->getCode() ?></h1>
 </body>
 </html>
