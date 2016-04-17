@@ -55,4 +55,14 @@ abstract class AbstractController
     {
         return $_POST;
     }
+
+    /**
+     * Get POST parameter by name. Returns null if parameter was not received
+     * @param string $parameterName
+     * @return mixed|null
+     */
+    public function getParameter(string $parameterName)
+    {
+        return $this->getPost()[$parameterName] ?? null;
+    }
 }
