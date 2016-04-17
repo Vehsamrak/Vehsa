@@ -3,6 +3,7 @@
 namespace Vehsamrak\Vehsa;
 
 use Vehsamrak\Vehsa\Exception\ActionNotFound;
+use Vehsamrak\Vehsa\Exception\ControllerNotFound;
 
 /**
  * Abstract controller. Extend this class to make your controllers.
@@ -93,5 +94,24 @@ abstract class AbstractController
     public function isGet()
     {
         return $this->isRequestMethod(self::HTTP_METHOD_GET);
+    }
+
+    /**
+     * @param string $controllerName
+     * @param string $action
+     * @return mixed
+     * @throws ActionNotFound
+     * @throws ControllerNotFound
+     */
+    public function redirectToControllerRoute(string $controllerName, string $action)
+    {
+        if (!class_exists($controllerName)) {
+            throw new ControllerNotFound();
+        }
+
+        /** @var AbstractController $controller */
+        $controller = new $controllerName;
+
+        return $controller->processAction($action);
     }
 }
