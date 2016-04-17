@@ -50,7 +50,7 @@ class Renderer
             [
                 $this->getUserViewDirectory(),
                 'Errors',
-                'exception.php',
+                'error.php',
             ]
         );
 
@@ -59,7 +59,7 @@ class Renderer
                 DIRECTORY_SEPARATOR,
                 [
                     self::VIEW_PATH,
-                    'exception.php',
+                    'error.php',
                 ]
             );
         }
