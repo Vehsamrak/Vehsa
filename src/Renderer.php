@@ -9,8 +9,6 @@ namespace Vehsamrak\Vehsa;
 class Renderer
 {
 
-    const VIEW_PATH = __DIR__ . DIRECTORY_SEPARATOR . 'View';
-
     /**
      * Render view template.
      * Parameters are extracted for usage inside template.
@@ -40,39 +38,9 @@ class Renderer
     }
 
     /**
-     * @param \Exception $exception
-     * @throws Exception\ConfigParameterNotFound
-     */
-    public function renderException(\Exception $exception)
-    {
-        $templatePath = join(
-            DIRECTORY_SEPARATOR,
-            [
-                $this->getUserViewDirectory(),
-                'Errors',
-                'error.php',
-            ]
-        );
-
-        if (!file_exists($templatePath)) {
-            $templatePath = join(
-                DIRECTORY_SEPARATOR,
-                [
-                    self::VIEW_PATH,
-                    'error.php',
-                ]
-            );
-        }
-
-        extract(['exception' => $exception]);
-
-        require_once($templatePath);
-    }
-
-    /**
      * @return string
      */
-    private function getUserViewDirectory()
+    public static function getUserViewDirectory()
     {
         return join(
             DIRECTORY_SEPARATOR,
