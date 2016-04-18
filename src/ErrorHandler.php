@@ -38,7 +38,7 @@ class ErrorHandler
             DIRECTORY_SEPARATOR,
             [
                 Renderer::getUserViewDirectory(),
-                'Errors',
+                'errors',
                 'error.php',
             ]
         );
