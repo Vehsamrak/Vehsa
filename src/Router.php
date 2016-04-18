@@ -17,12 +17,15 @@ class Router
     const ENVIRONMENT_PRODUCTION = 'prod';
 
     /**
+     * Starting session and running application
      * @return mixed
      * @throws ControllerNotFound
      * @throws ActionNotFound
      */
     public function run()
     {
+        session_start();
+        
         $routes = $this->parseRoutes();
         $controllerName = $this->getControllerName($routes);
         $action = $this->getAction($routes);
