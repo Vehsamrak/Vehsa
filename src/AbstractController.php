@@ -79,7 +79,7 @@ abstract class AbstractController
      * @param string $method
      * @return bool
      */
-    public function isRequestMethod(string $method)
+    public function isRequestMethod(string $method): bool
     {
         return $_SERVER['REQUEST_METHOD'] === $method;
     }
@@ -87,7 +87,7 @@ abstract class AbstractController
     /**
      * @return bool
      */
-    public function isPost()
+    public function isPost(): bool
     {
         return $this->isRequestMethod(self::HTTP_METHOD_POST);
     }
@@ -95,7 +95,7 @@ abstract class AbstractController
     /**
      * @return bool
      */
-    public function isGet()
+    public function isGet(): bool
     {
         return $this->isRequestMethod(self::HTTP_METHOD_GET);
     }
