@@ -59,7 +59,7 @@ abstract class AbstractController
      */
     public function getPost(): array
     {
-        parse_str(urldecode(file_get_contents('php://input')), $postParameters);
+        parse_str(file_get_contents('php://input'), $postParameters);
 
         return $postParameters;
     }
