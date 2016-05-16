@@ -53,23 +53,13 @@ abstract class AbstractController
     }
 
     /**
-     * Parses php input and returns valid $_POST array analog
+     * Creates $_POST from php://input
+     * Parses php input and returns valid post parameters array
      * @return array Post parameters array
      */
     public function getPost(): array
     {
-        $inputKeyValuePairs = explode('&', file_get_contents('php://input'));
-
-        $postParameters = [];
-        foreach ($inputKeyValuePairs as $inputKeyValuePair) {
-            $keyValuePair = explode('=', $inputKeyValuePair);
-
-            if (isset($keyValuePair[0], $keyValuePair[1])) {
-                $key = urldecode($keyValuePair[0]);
-                $value = urldecode($keyValuePair[1]);
-                $postParameters[$key] = $value;
-            }
-        }
+        parse_str(urldecode(file_get_contents('php://input')), $postParameters);
 
         return $postParameters;
     }
