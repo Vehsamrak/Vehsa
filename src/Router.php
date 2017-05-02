@@ -45,7 +45,7 @@ class Router
      */
     private function parseRoutes(): array
     {
-        $pathInfo = $_SERVER['PATH_INFO'] ?? null;
+        $pathInfo = $_SERVER['REQUEST_URI'] ?? null;
 
         return $pathInfo ? explode('/', $pathInfo) : [];
     }
