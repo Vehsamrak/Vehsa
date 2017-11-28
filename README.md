@@ -1,4 +1,4 @@
-# vehsa
+# Vehsa
 Simplest MVC Framework
 
-Please note that project is in development stage and not ready for production yet!
+Please note that this project is experimental, and not ready for production usage.
