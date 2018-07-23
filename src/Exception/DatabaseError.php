@@ -4,7 +4,6 @@ namespace Vehsamrak\Vehsa\Exception;
 
 /**
  * Exception: Database error occured
- * @author Vehsamrak
  */
 class DatabaseError extends \Exception
 {
