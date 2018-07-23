@@ -1,4 +1,4 @@
 # Vehsa
-Simplest MVC Framework
+Simplest MVC Framework without dependencies
 
-Please note that this project is experimental, and not ready for production usage.
+Please, note that this project is experimental, and is not ready for any production usage.
