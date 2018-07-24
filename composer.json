@@ -2,7 +2,7 @@
     "name": "vehsamrak/vehsa",
     "description": "Simplest MVC Framework",
     "keywords": ["simple", "mvc", "framework"],
-    "license": "GPL v3",
+    "license": "MIT",
     "authors": [
         {
             "name": "Petr Karmashev",
